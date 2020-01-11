@@ -1,0 +1,27 @@
+# Tasking
+
+rule 
+
+rule 2:
+1. should_return_fizz_when_number_can_divide_3
+2. should_return_buzz_when_number_can_divide_5
+3. should_return_whizz_when_number_can_divide_7
+
+rule 3:
+4. should_return_fizzbuzz_when_number_can_divide_3_and_5
+5. should_return_buzzwhizz_when_number_can_divide_5_and_7
+6. should_return_fizzwhizz_when_number_can_divide_3_and_7
+7. should_return_fizzbuzzwhizz_when_number_can_divide_3_and_5_and_7
+
+rule 4:
+8. should_return_fizz_when_number_contains_3
+
+rule 5:
+9. should_return_fizz_when_number_contains_3_and_number_can_divide_5
+
+rule 6:
+12. should_return_buzzwhizz_when_number_contains_5_and_number_can_divide_5_and_7
+13. should_return_fizz_when_number_contains_7_and_number_can_divide_3
+
+
+0.should_return_input_number_when_no_rules_matched
