@@ -2,6 +2,9 @@ package com.thoughtworks;
 
 public class FizzBuzz {
     public String fizzbuzz(int number) {
+        if (contains3(number)) {
+            return "Fizz";
+        }
         StringBuilder result = new StringBuilder();
         if (canModuloBy3(number)) {
             result.append("Fizz");
@@ -14,9 +17,6 @@ public class FizzBuzz {
         }
         if (result.length() > 0) {
             return result.toString();
-        }
-        if (contains3(number)) {
-            return "Fizz";
         }
         return "1";
     }
