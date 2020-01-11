@@ -7,17 +7,19 @@ import static org.junit.Assert.assertThat;
 
 public class FizzBuzzTest {
 
+    private void assertFizzBuzz(int input, String expect) {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        String result = fizzBuzz.fizzbuzz(input);
+        assertThat(result, is(expect));
+    }
+
     @Test
     public void should_return_input_number_when_no_rules_matched() {
-        FizzBuzz fizzBuzz = new FizzBuzz();
-        String result = fizzBuzz.fizzbuzz(1);
-        assertThat(result, is("1"));
+        assertFizzBuzz(1, "1");
     }
 
     @Test
     public void should_return_fizz_when_number_can_divide_3() {
-        FizzBuzz fizzBuzz = new FizzBuzz();
-        String result = fizzBuzz.fizzbuzz(3);
-        assertThat(result, is("Fizz"));
+        assertFizzBuzz(3, "Fizz");
     }
 }
