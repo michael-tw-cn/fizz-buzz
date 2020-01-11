@@ -5,9 +5,12 @@ public class FizzBuzz {
     public static final String FIZZ = "Fizz";
     public static final String BUZZ = "Buzz";
     public static final String WHIZZ = "Whizz";
-    private Modulo modulo3 = new Modulo(3, FIZZ);
-    private Modulo modulo5 = new Modulo(5, BUZZ);
-    private Modulo modulo7 = new Modulo(7, WHIZZ);
+    private static final Candidate CANDIDATE_3 = new Candidate(3, FIZZ);
+    public static final Candidate CANDIDATE_5 = new Candidate(5, BUZZ);
+    public static final Candidate CANDIDATE_7 = new Candidate(7, WHIZZ);
+    private Modulo modulo3 = new Modulo(CANDIDATE_3);
+    private Modulo modulo5 = new Modulo(CANDIDATE_5);
+    private Modulo modulo7 = new Modulo(CANDIDATE_7);
 
     public String fizzBuzz(int number) {
         if (contains5(number)) {
@@ -16,7 +19,7 @@ public class FizzBuzz {
                 return rule6.apply(number);
             }
         }
-        ContainsRule rule4And5 = new ContainsRule(new Candidate(3, FIZZ));
+        ContainsRule rule4And5 = new ContainsRule(CANDIDATE_3);
         if (rule4And5.match(number)) {
             return FIZZ;
         }

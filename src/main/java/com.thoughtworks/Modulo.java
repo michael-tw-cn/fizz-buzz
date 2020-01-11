@@ -1,21 +1,20 @@
 package com.thoughtworks;
 
 public class Modulo {
-    private int value;
-    private String description;
+    private Candidate candidate;
 
-    public Modulo(int value, String description) {
-        this.value = value;
-        this.description = description;
+    public Modulo(Candidate candidate) {
+
+        this.candidate = candidate;
     }
 
 
     public boolean canModuloBy(int number) {
-        return number % this.value == 0;
+        return number % this.candidate.getNumber() == 0;
     }
 
     public String getDescription() {
-        return description;
+        return this.candidate.getDescription();
     }
 
 }
