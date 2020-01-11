@@ -2,6 +2,9 @@ package com.thoughtworks;
 
 public class FizzBuzz {
     public String fizzbuzz(int number) {
+        if (String.valueOf(number).contains("5") && canModuloBy5(number) && canModuloBy7(number)) {
+            return "BuzzWhizz";
+        }
         if (contains3(number)) {
             return "Fizz";
         }

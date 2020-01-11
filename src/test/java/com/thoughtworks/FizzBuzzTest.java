@@ -39,8 +39,8 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void should_return_fizz_when_number_can_divide_5_and_7() {
-        assertFizzBuzz(35,"Fizz");
+    public void should_return_buzzwhizz_when_number_contains_5_and_number_can_divide_5_and_7() {
+        assertFizzBuzz(35,"BuzzWhizz");
     }
 
     @Test
@@ -50,7 +50,7 @@ public class FizzBuzzTest {
 
     @Test
     public void should_return_fizzbuzzwhizz_when_number_can_divide_3_and_5_and_7() {
-        assertFizzBuzz(105, "FizzBuzzWhizz");
+        assertFizzBuzz(105, "BuzzWhizz");
     }
 
     @Test
