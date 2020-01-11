@@ -16,7 +16,8 @@ public class FizzBuzz {
                 return rule6.apply(number);
             }
         }
-        if (contains3(number)) {
+        ContainsRule rule4And5 = new ContainsRule("3");
+        if (rule4And5.match(number)) {
             return FIZZ;
         }
         ModuloRule rule2And3 = new ModuloRule(modulo3, modulo5, modulo7);
@@ -28,10 +29,6 @@ public class FizzBuzz {
 
     private boolean contains5(int number) {
         return String.valueOf(number).contains("5");
-    }
-
-    private boolean contains3(int number) {
-        return String.valueOf(number).contains("3");
     }
 
 }
