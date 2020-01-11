@@ -11,7 +11,7 @@ public class FizzBuzz {
 
     public String fizzBuzz(int number) {
         if (contains5(number)) {
-            Rule rule6 = new Rule(modulo5, modulo7);
+            ModuloRule rule6 = new ModuloRule(modulo5, modulo7);
             if (rule6.match(number)) {
                 return rule6.apply(number);
             }
@@ -19,7 +19,7 @@ public class FizzBuzz {
         if (contains3(number)) {
             return FIZZ;
         }
-        Rule rule2And3 = new Rule(modulo3, modulo5, modulo7);
+        ModuloRule rule2And3 = new ModuloRule(modulo3, modulo5, modulo7);
         if (rule2And3.match(number)) {
             return rule2And3.apply(number);
         }

@@ -2,15 +2,14 @@ package com.thoughtworks;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class Rule {
+public class ModuloRule {
 
     private List<Modulo> moduloes = new ArrayList<>();
 
-    public Rule(Modulo... moduloes) {
+    public ModuloRule(Modulo... moduloes) {
         this.moduloes.addAll(Arrays.asList(moduloes));
     }
 
