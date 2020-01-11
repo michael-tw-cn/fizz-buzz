@@ -24,7 +24,7 @@ public class FizzBuzz {
         if (result.length() > 0) {
             return result.toString();
         }
-        return "1";
+        return String.valueOf(number);
     }
 
     private boolean contains7(int number) {

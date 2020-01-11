@@ -19,6 +19,11 @@ public class FizzBuzzTest {
     }
 
     @Test
+    public void should_return_input_number_when_no_rules_matched_2() {
+        assertFizzBuzz(2, "2");
+    }
+
+    @Test
     public void should_return_fizz_when_number_can_divide_3() {
         assertFizzBuzz(3, "Fizz");
     }
