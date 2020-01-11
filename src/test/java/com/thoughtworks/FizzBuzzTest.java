@@ -22,4 +22,9 @@ public class FizzBuzzTest {
     public void should_return_fizz_when_number_can_divide_3() {
         assertFizzBuzz(3, "Fizz");
     }
+
+    @Test
+    public void should_return_buzz_when_number_can_divide_5() {
+        assertFizzBuzz(5, "Buzz");
+    }
 }
