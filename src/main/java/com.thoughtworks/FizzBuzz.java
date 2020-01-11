@@ -2,26 +2,18 @@ package com.thoughtworks;
 
 public class FizzBuzz {
     public String fizzbuzz(int number) {
-        if (canModuloBy3(number) && canModuloBy5(number) && canModuloBy7(number)) {
-            return "FizzBuzzWhizz";
-        }
-        if (canModuloBy3(number) && canModuloBy5(number)) {
-            return "FizzBuzz";
-        }
-        if (canModuloBy5(number) && canModuloBy7(number)) {
-            return "BuzzWhizz";
-        }
-        if (canModuloBy3(number) && canModuloBy7(number)) {
-            return "FizzWhizz";
-        }
+        StringBuilder result = new StringBuilder();
         if (canModuloBy3(number)) {
-            return "Fizz";
+            result.append("Fizz");
         }
         if (canModuloBy5(number)) {
-            return "Buzz";
+            result.append("Buzz");
         }
         if (canModuloBy7(number)) {
-            return "Whizz";
+            result.append("Whizz");
+        }
+        if (result.length() > 0) {
+            return result.toString();
         }
         return "1";
     }
