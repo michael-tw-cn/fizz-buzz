@@ -1,39 +1,30 @@
 package com.thoughtworks;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 public class FizzBuzz {
 
-    public static final String FIZZ = "Fizz";
-    public static final String BUZZ = "Buzz";
-    public static final String WHIZZ = "Whizz";
-    private static final Candidate CANDIDATE_3 = new Candidate(3, FIZZ);
-    public static final Candidate CANDIDATE_5 = new Candidate(5, BUZZ);
-    public static final Candidate CANDIDATE_7 = new Candidate(7, WHIZZ);
-    private Modulo modulo3 = new Modulo(CANDIDATE_3);
-    private Modulo modulo5 = new Modulo(CANDIDATE_5);
-    private Modulo modulo7 = new Modulo(CANDIDATE_7);
+    private static final Candidate CANDIDATE_3 = new Candidate(3, "Fizz");
+    private static final Candidate CANDIDATE_5 = new Candidate(5, "Buzz");
+    private static final Candidate CANDIDATE_7 = new Candidate(7, "Whizz");
+    private final List<Rule> rules = new ArrayList<>();
 
-    public String fizzBuzz(int number) {
-        ContainsRule containsRule7 = new ContainsRule(CANDIDATE_7);
-        if (containsRule7.match(number)) {
-            ModuloRule moduloRule = new ModuloRule(modulo3, modulo7);
-            if (moduloRule.match(number)) {
-                return moduloRule.apply(number);
-            }
-        }
-        Rule containsRule6 = new ContainsRule(CANDIDATE_5);
-        if (containsRule6.match(number)) {
-            ModuloRule moduloRule = new ModuloRule(modulo5, modulo7);
-            if (moduloRule.match(number)) {
-                return moduloRule.apply(number);
-            }
-        }
-        Rule rule4And5 = new ContainsRule(CANDIDATE_3);
-        if (rule4And5.match(number)) {
-            return rule4And5.apply(number);
-        }
-        Rule rule2And3 = new ModuloRule(modulo3, modulo5, modulo7);
-        if (rule2And3.match(number)) {
-            return rule2And3.apply(number);
+    public FizzBuzz() {
+        Modulo modulo3 = new Modulo(CANDIDATE_3);
+        Modulo modulo5 = new Modulo(CANDIDATE_5);
+        Modulo modulo7 = new Modulo(CANDIDATE_7);
+        rules.add(new ContainsRule(CANDIDATE_7, new ModuloRule(modulo3, modulo7)));
+        rules.add(new ContainsRule(CANDIDATE_5, new ModuloRule(modulo5, modulo7)));
+        rules.add(new ContainsRule(CANDIDATE_3, new DefaultRule()));
+        rules.add(new ModuloRule(modulo3, modulo5, modulo7));
+    }
+
+    String fizzBuzz(int number) {
+        Optional<Rule> matchedRule = this.rules.stream().filter(rule -> rule.match(number)).findFirst();
+        if (matchedRule.isPresent()) {
+            return matchedRule.get().apply(number);
         }
         return String.valueOf(number);
     }
