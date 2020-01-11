@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class ModuloRule {
+public class ModuloRule implements Rule {
 
     private List<Modulo> moduloes = new ArrayList<>();
 
@@ -13,7 +13,8 @@ public class ModuloRule {
         this.moduloes.addAll(Arrays.asList(moduloes));
     }
 
-    String apply(int number) {
+    @Override
+    public String apply(int number) {
         StringBuilder result = new StringBuilder();
         matchedModuloes(number).forEach(modulo -> result.append(modulo.getDescription()));
         return result.toString();
@@ -23,6 +24,7 @@ public class ModuloRule {
         return moduloes.stream().filter(modulo -> modulo.canModuloBy(number));
     }
 
+    @Override
     public boolean match(int number) {
         return matchedModuloes(number).count() > 0;
     }

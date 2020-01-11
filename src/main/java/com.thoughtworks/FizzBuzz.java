@@ -24,7 +24,7 @@ public class FizzBuzz {
         if (rule4And5.match(number)) {
             return rule4And5.apply(number);
         }
-        ModuloRule rule2And3 = new ModuloRule(modulo3, modulo5, modulo7);
+        Rule rule2And3 = new ModuloRule(modulo3, modulo5, modulo7);
         if (rule2And3.match(number)) {
             return rule2And3.apply(number);
         }
