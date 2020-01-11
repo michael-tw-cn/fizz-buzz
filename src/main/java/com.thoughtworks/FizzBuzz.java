@@ -13,10 +13,7 @@ public class FizzBuzz {
         if (contains5(number)) {
             Rule rule6 = new Rule(modulo5, modulo7);
             if (rule6.match(number)) {
-                StringBuilder rule6Result = rule6.apply(number);
-                if (rule6Result.length() > 0) {
-                    return rule6Result.toString();
-                }
+                return rule6.apply(number);
             }
         }
         if (contains3(number)) {
@@ -24,10 +21,7 @@ public class FizzBuzz {
         }
         Rule rule2And3 = new Rule(modulo3, modulo5, modulo7);
         if (rule2And3.match(number)) {
-            StringBuilder result = rule2And3.apply(number);
-            if (result.length() > 0) {
-                return result.toString();
-            }
+            return rule2And3.apply(number);
         }
         return String.valueOf(number);
     }

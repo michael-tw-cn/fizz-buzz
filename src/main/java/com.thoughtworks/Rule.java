@@ -14,10 +14,10 @@ public class Rule {
         this.moduloes.addAll(Arrays.asList(moduloes));
     }
 
-    StringBuilder apply(int number) {
+    String apply(int number) {
         StringBuilder result = new StringBuilder();
         matchedModuloes(number).forEach(modulo -> result.append(modulo.getDescription()));
-        return result;
+        return result.toString();
     }
 
     private Stream<Modulo> matchedModuloes(int number) {
