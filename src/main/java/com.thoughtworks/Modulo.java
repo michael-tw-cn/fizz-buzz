@@ -4,7 +4,6 @@ public class Modulo {
     private Candidate candidate;
 
     public Modulo(Candidate candidate) {
-
         this.candidate = candidate;
     }
 

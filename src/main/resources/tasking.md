@@ -21,6 +21,8 @@ rule 5:
 
 rule 6:
 12. should_return_buzzwhizz_when_number_contains_5_and_number_can_divide_5_and_7
+
+rule 7:
 13. should_return_fizz_when_number_contains_7_and_number_can_divide_3
 
 

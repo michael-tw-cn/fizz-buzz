@@ -63,6 +63,11 @@ public class FizzBuzzTest {
         assertFizzBuzz(30, "Fizz");
     }
 
+    @Test
+    public void should_return_fizz_when_number_contains_7_and_number_can_divide_3() {
+        assertFizzBuzz(75, "Fizz");
+    }
+
     private String fizzBuzz(int i) {
         return fizzBuzz.fizzBuzz(i);
     }

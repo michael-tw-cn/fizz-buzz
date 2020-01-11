@@ -13,11 +13,18 @@ public class FizzBuzz {
     private Modulo modulo7 = new Modulo(CANDIDATE_7);
 
     public String fizzBuzz(int number) {
+        ContainsRule containsRule7 = new ContainsRule(CANDIDATE_7);
+        if (containsRule7.match(number)) {
+            ModuloRule moduloRule = new ModuloRule(modulo3, modulo7);
+            if (moduloRule.match(number)) {
+                return moduloRule.apply(number);
+            }
+        }
         Rule containsRule6 = new ContainsRule(CANDIDATE_5);
         if (containsRule6.match(number)) {
-            ModuloRule rule6 = new ModuloRule(modulo5, modulo7);
-            if (rule6.match(number)) {
-                return rule6.apply(number);
+            ModuloRule moduloRule = new ModuloRule(modulo5, modulo7);
+            if (moduloRule.match(number)) {
+                return moduloRule.apply(number);
             }
         }
         Rule rule4And5 = new ContainsRule(CANDIDATE_3);
