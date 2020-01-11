@@ -47,4 +47,9 @@ public class FizzBuzzTest {
     public void should_return_fizzwhizz_when_number_can_divide_3_and_7() {
         assertFizzBuzz(21, "FizzWhizz");
     }
+
+    @Test
+    public void should_return_fizzbuzzwhizz_when_number_can_divide_3_and_5_and_7() {
+        assertFizzBuzz(105, "FizzBuzzWhizz");
+    }
 }
