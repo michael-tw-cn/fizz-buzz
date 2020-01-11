@@ -1,13 +1,14 @@
 package com.thoughtworks;
 
 public class ContainsRule {
-    private String keyword;
 
-    public ContainsRule(String keyword) {
-        this.keyword = keyword;
+    private Candidate candidate;
+
+    public ContainsRule(Candidate candidate) {
+        this.candidate = candidate;
     }
 
     public boolean match(int number) {
-        return String.valueOf(number).contains(keyword);
+        return String.valueOf(number).contains(String.valueOf(candidate.getNumber()));
     }
 }
