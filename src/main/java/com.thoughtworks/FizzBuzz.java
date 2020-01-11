@@ -15,7 +15,14 @@ public class FizzBuzz {
         if (result.length() > 0) {
             return result.toString();
         }
+        if (contains3(number)) {
+            return "Fizz";
+        }
         return "1";
+    }
+
+    private boolean contains3(int number) {
+        return String.valueOf(number).contains("3");
     }
 
     private boolean canModuloBy7(int number) {
