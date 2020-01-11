@@ -3,8 +3,9 @@ package com.thoughtworks;
 public class Main {
 
     public static void main(String[] args) {
+        FizzBuzz fizzBuzz = new FizzBuzz();
         for( int i = 0; i < 120; i++) {
-            String result = new FizzBuzz().fizzBuzz(i+1);
+            String result = fizzBuzz.fizzBuzz(i+1);
             System.out.println(result);
         }
     }

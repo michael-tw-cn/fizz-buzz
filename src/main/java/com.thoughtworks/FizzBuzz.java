@@ -22,11 +22,7 @@ public class FizzBuzz {
     }
 
     String fizzBuzz(int number) {
-        Optional<Rule> matchedRule = this.rules.stream().filter(rule -> rule.match(number)).findFirst();
-        if (matchedRule.isPresent()) {
-            return matchedRule.get().apply(number);
-        }
-        return String.valueOf(number);
+        return this.rules.stream().filter(rule -> rule.match(number)).findFirst().orElse(new DefaultRule()).apply(number);
     }
 
 }
