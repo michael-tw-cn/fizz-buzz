@@ -21,7 +21,7 @@ public class FizzBuzz {
         }
         ContainsRule rule4And5 = new ContainsRule(CANDIDATE_3);
         if (rule4And5.match(number)) {
-            return FIZZ;
+            return rule4And5.apply(number);
         }
         ModuloRule rule2And3 = new ModuloRule(modulo3, modulo5, modulo7);
         if (rule2And3.match(number)) {
