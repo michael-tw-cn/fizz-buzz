@@ -2,7 +2,10 @@ package com.thoughtworks;
 
 public class FizzBuzz {
     public String fizzbuzz(int number) {
-        if (String.valueOf(number).contains("5") && canModuloBy5(number) && canModuloBy7(number)) {
+        if (contains7(number) && canModuloBy3(number)) {
+            return "Fizz";
+        }
+        if (contains5(number) && canModuloBy5(number) && canModuloBy7(number)) {
             return "BuzzWhizz";
         }
         if (contains3(number)) {
@@ -22,6 +25,14 @@ public class FizzBuzz {
             return result.toString();
         }
         return "1";
+    }
+
+    private boolean contains7(int number) {
+        return String.valueOf(number).contains("7");
+    }
+
+    private boolean contains5(int number) {
+        return String.valueOf(number).contains("5");
     }
 
     private boolean contains3(int number) {
